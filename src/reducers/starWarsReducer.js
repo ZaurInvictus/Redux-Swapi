@@ -8,8 +8,8 @@ const initialState = {
   characters: [],
   fetching: false,
   error: null
-  // Array characters, Boolean fetching, null error.
 };
+
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     // Fill me in with the important reducers
@@ -26,14 +26,14 @@ export const charsReducer = (state = initialState, action) => {
       return {
          ...state,
          fetching: false,
-        characters: action.payload
+         characters: action.payload
       }
-
+    
      case FETCH_ERROR:
         return {
           ...state,
           fetching: false,
-          error: 'Uh oh... something happened 😵!'
+          error: 'Uh no... something happened 😵!'
        };
 
     default:
