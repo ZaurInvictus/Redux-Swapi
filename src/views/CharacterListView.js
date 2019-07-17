@@ -12,10 +12,13 @@ class CharacterListView extends React.Component {
   render() {
     //console.log('PROPS from CHARACTER VIEW', this.props)
     //console.log('STATE from CHARACTER VIEW', this.state)
+
     if (this.props.fetching) {
-      return <h1>Loading...</h1> 
+      return <h1>Loading...</h1>
+    } else if(this.props.error) {
+     return <p>{this.props.error}</p>
     }
-    
+
     return (
       <div className="CharactersList_wrapper">
         <CharacterList characters={this.props.characters} />
@@ -35,8 +38,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { getData })(CharacterListView)
-
-
-
-
-

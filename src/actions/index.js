@@ -11,15 +11,14 @@ export const getData = () => dispatch => {
    .get(`https://swapi.co/api/people`)
    .then(({ data }) => {
     dispatch({
-      type: FETCH_SUCCESS, 
+      type: FETCH_SUCCESS,
       payload: data.results
     });
   })
   .catch(err => {
     dispatch({
-      type: FETCH_ERROR, 
+      type: FETCH_ERROR,
       error: err
     });
   });
 };
-
